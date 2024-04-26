@@ -231,7 +231,7 @@ def main():
     log_path = args.log_path
 
     # Log file is named based on the running time
-    log_file_name = log_path + 'log-' + 'GRFBUNet' + '.log'
+    log_file_name = os.path.join(log_path, 'log-GRFBUNet.log')
      # save print message
     sys.stdout = Logger(log_file_name, stream=sys.stdout)
     compute_mIoU(gt_dir, pred_dir, png_name_list, png_name_list, num_classes=2, name_classes=["_background_", "Tactile_paving"])
